@@ -1,0 +1,44 @@
+﻿<Window x:Class="BasicWpfNotepad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicWpfNotepad"
+        mc:Ignorable="d"
+        Title="Basic Notepad" Height="400" Width="640">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="0">
+            <TextBox AcceptsReturn="True" TextWrapping="Wrap" Foreground="Gray" FontSize="18" BorderThickness="0" Padding="15" HorizontalAlignment="Right" x:Name="TextArea" Width="450" FontFamily="Maiandra GD"></TextBox>
+        </ScrollViewer>
+
+        <Grid Grid.Column="0" Background="Black" Margin="0,0,450,0">
+
+            <StackPanel Margin="20,50,60,20">
+                <Button Margin="0,0,0,10" x:Name="NewBtn" Click="NewBtn_Click"  Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >New</Button>
+                <Button Margin="0,0,0,10" x:Name="OpenBtn" Click="OpenBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Open</Button>
+                <Button Margin="0,0,0,10" x:Name="SaveBtn" Click="SaveBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Save</Button>
+                <Button Margin="0,0,0,10" x:Name="AsBtn" Click="AsBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Save As</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
