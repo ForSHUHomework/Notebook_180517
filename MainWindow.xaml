@@ -37,7 +37,12 @@
                 <Button Margin="0,0,0,10" x:Name="NewBtn" Click="NewBtn_Click"  Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >New</Button>
                 <Button Margin="0,0,0,10" x:Name="OpenBtn" Click="OpenBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Open</Button>
                 <Button Margin="0,0,0,10" x:Name="SaveBtn" Click="SaveBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Save</Button>
-                <Button Margin="0,0,0,10" x:Name="AsBtn" Click="AsBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Save As</Button>
+                <Button Margin="0,0,0,30" x:Name="AsBtn" Click="AsBtn_Click" Foreground="LightGray" FontSize="16" BorderThickness="0" Background="{x:Null}"  BorderBrush="{x:Null}" Cursor="Pen" FontFamily="Calibri" Focusable="False" HorizontalAlignment="Left" >Save As</Button>
+                <StackPanel Margin="-5,0,0,0" Orientation="Horizontal">
+                    <Button x:Name="SmallFont" Click="SmallFont_Click" Width="25" FontFamily="Constantia" Background="{x:Null}" Foreground="DarkGray" FontSize="15">A</Button>
+                    <Button x:Name="NormalFont" Click="NormalFont_Click" Width="25" FontFamily="Constantia" Background="{x:Null}" Foreground="DarkGray" FontSize="20">A</Button>
+                    <Button x:Name="BigFont" Click="BigFont_Click" Width="25" FontFamily="Constantia" Background="{x:Null}" Foreground="DarkGray" FontSize="25">A</Button>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

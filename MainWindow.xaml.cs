@@ -31,7 +31,6 @@ namespace BasicWpfNotepad
         // 開啟檔案按鈕
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
-            
             // 產生開啟檔案視窗 OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -72,12 +71,53 @@ namespace BasicWpfNotepad
 
         private void NewBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            TextArea.Clear();
         }
 
         private void AsBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 產生開啟檔案視窗 OpenFileDialog 
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
 
+            // 顯示視窗
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // 當按下開啟之後的反應 
+            if (result == true)
+            {
+                // 取得檔案路徑 
+                filePath = dlg.FileName;
+
+                // 儲存檔案
+                System.IO.File.WriteAllText(filePath, TextArea.Text);
+            }
+        }
+
+        private void SmallFont_Click(object sender, RoutedEventArgs e)
+        {
+           double fsize = TextArea.FontSize;
+            if (fsize != 14.0)
+            {
+                TextArea.FontSize = 14;
+            }
+        }
+
+        private void NormalFont_Click(object sender, RoutedEventArgs e)
+        {
+            double fsize = TextArea.FontSize;
+            if (fsize != 18.0)
+            {
+                TextArea.FontSize = 18;
+            }
+        }
+
+        private void BigFont_Click(object sender, RoutedEventArgs e)
+        {
+            double fsize = TextArea.FontSize;
+            if (fsize != 22.0)
+            {
+                TextArea.FontSize = 22;
+            }
         }
     }
 }
