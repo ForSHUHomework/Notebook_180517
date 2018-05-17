@@ -119,5 +119,17 @@ namespace BasicWpfNotepad
                 TextArea.FontSize = 22;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TextArea.Background = Brushes.DimGray;
+            TextArea.Foreground = Brushes.White;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TextArea.Background = Brushes.White;
+            TextArea.Foreground = Brushes.Gray;
+        }
     }
 }
